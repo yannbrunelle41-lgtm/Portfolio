@@ -29,6 +29,10 @@ ol[class] {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Set core root defaults */
 html {
   scroll-behavior: smooth;
@@ -141,3 +145,340 @@ address {
 }
 
 /* STYLE */
+
+
+
+/* .burger-menu {
+  background-image: url(../img/Menu-burger-close.svg);
+  width: 3.2rem;
+  height: 3.2rem;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+  margin-left: auto;
+}
+
+.burger-menu[aria-expanded="true"] {
+  background-image: url("../img/Menu-burger-open.svg");
+}
+
+#menu {
+  background-color: #2C2830;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transform: translateX(100%);
+  transition: transform 350ms ease-out;
+  padding-inline: 2.4rem;
+  margin-top: 0;
+  padding-top: 2.4rem;
+  height: 58.4rem;
+  overflow-x: clip;
+  overflow-y: clip;
+}
+
+#menu[data-visible="true"] {
+  transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+
+  .burger-menu {
+    display: none;
+  }
+}
+ */
+
+ :root {
+  /* color */
+  --main-bg: #050507;
+  --button-bg: #19151F;
+  --main-text: #F5EFFA;
+  --secondary-text: #C6B8D5;
+  --purple: #B88AE8;
+  --gradient-separator: radial-gradient(
+    ellipse at center,
+    #7040A0CC 0%,
+    #05050700 80%
+    );
+  --gradient-button: linear-gradient(
+    to bottom,
+    #7040A0 0%,
+    #29173A 100%
+  );
+  --outline: #B88AE84D;
+ }
+
+ .desktop-main-heading {
+  font-family: 'Nunito Sans';
+  font-weight: 800;
+  font-size: 5.6rem;  
+ }
+
+ .desktop-section-heading {
+  font-family: 'Nunito Sans';
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 6rem;
+ }
+
+ .sesktop-subheading {
+  font-family: 'Nunito Sans';
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+ }
+
+ .mobile-main-heading {
+  font-family: 'Nunito Sans';
+  font-weight: 800;
+  font-size: 3.6rem;
+  line-height: 4.4rem;
+  text-align: center;
+  color: var(--main-text);
+ }
+
+ .mobile-section-heading {
+  font-family: 'Nunito Sans';
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  color: var(--main-text);
+ }
+
+ .mobile-subheading {
+  font-family: 'Nunito Sans';
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 3rem;
+  color: var(--main-text);
+ }
+
+ .desktop-body-text {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 3rem;
+ }
+
+ .mobile-body-text {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: var(--secondary-text);
+ }
+
+ .interface-text {
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+ }
+
+ .form-placeholder {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 3rem;
+ }
+
+ /* nunito-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/nunito-sans-v19-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* nunito-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/nunito-sans-v19-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* nunito-sans-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/nunito-sans-v19-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/poppins-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/poppins-v24-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/poppins-v24-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/poppins-v24-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+ body {
+  position: relative;
+  background-color: var(--main-bg);
+  justify-items: center;
+  display: flex;
+  flex-direction: column;
+ }
+
+ .hero {
+  position: relative;
+  width: 100%;
+  padding-inline: 3.2rem;
+  padding-block: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.4rem;
+ }
+
+ .actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  text-align: center;
+  padding-block: 0.8rem;
+  width: fit-content;
+  margin-inline: auto;
+  
+ }
+
+.h1-color {
+  color: var(--purple);
+}
+
+.full-button {
+  display: block;
+  background-image: var(--gradient-button);
+  padding-inline: 1.6rem;
+  padding-block: 0.8rem;
+  width: 100%;
+  outline: 1px solid var(--outline);
+  border-radius: 0.8rem;
+  color: var(--main-text);
+  margin-inline: auto;
+  }
+
+.empty-button {
+  display: block;
+  background-color: var(--button-bg);
+  padding-inline: 1.6rem;
+  padding-block: 0.8rem;
+  outline: 1px solid var(--outline);
+  border-radius: 0.8rem;
+  width: fit-content;
+  color: var(--main-text);
+}
+
+.carrousel {
+  position: relative;
+  width: 100%;
+  padding-inline: 3.2rem;
+  padding-block: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exemple {
+  color: var(--main-text);
+}
+
+.a-propos {
+  position: relative;
+  width: 100%;
+  padding-inline: 3.2rem;
+  padding-block: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.a-propos .full-button {
+  width: fit-content;
+}
+
+.a-propos::before {
+  display: block;
+  content: "";
+  background-image: var(--gradient-separator);
+  width: 100%;
+  height: 2px;
+}
+
+.skills {
+  position: relative;
+  width: 100%;
+  padding-inline: 3.2rem;
+  padding-block: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+  color: var(--secondary-text);
+  border: solid 1px var(--purple);
+  border-radius: 0.8rem;
+  padding-inline: 1.6rem;
+  padding-block: 0.8rem;
+  max-width: 38.4rem;
+}
+
+.skills::before {
+  display: block;
+  content: "";
+  background-image: var(--gradient-separator);
+  width: 100%;
+  height: 2px;
+}
+
+.contact {
+  position: relative;
+  width: 100%;
+  padding-inline: 3.2rem;
+  padding-block: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  color: var(--secondary-text);
+}
+
+.wording {
+  color: var(--main-text);
+}

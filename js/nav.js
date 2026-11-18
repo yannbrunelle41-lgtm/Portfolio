@@ -1,13 +1,14 @@
-const toggleMenu = document.querySelector('nav button');
-const menu = document.querySelector('.menu-principal');
+const menu = document.querySelector("#menu");
+const burger = document.querySelector(".burger-menu");
 
-toggleMenu.addEventListener('click', function () {
-  const open = JSON.parse(toggleMenu.getAttribute('aria-expanded'));
-  toggleMenu.setAttribute('aria-expanded', !open);
-  menu.hidden = !menu.hidden;
+burger.addEventListener("click", () => {
+  const visibility = menu.getAttribute("data-visible");
 
-  if (!menu.hidden) {
-    menu.querySelector('a').focus();
+  if (visibility === "false") {
+    menu.setAttribute("data-visible", "true");
+    burger.setAttribute("aria-expanded", "true");
+  } else {
+    menu.setAttribute("data-visible", "false");
+    burger.setAttribute("aria-expanded", "false");
   }
 });
-// CF :Burger menu responsive ressource : https://polypane.app/blog/the-perfect-responsive-menu/

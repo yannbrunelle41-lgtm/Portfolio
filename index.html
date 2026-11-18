@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title><!-- Mettre le titre de la page --></title>
+	<title>Yann Brunelle - Portfolio</title>
 	<meta name="description" content="">
 	<!-- Mettre la description du contenu de la page dans l'attribut content -->
 
@@ -27,48 +27,66 @@
 </head>
 
 <body>
-	<header>
-		<div>
-			<a href="index.html">Yann Brunelle</a>
-		</div>
+	<header>		
+		<a href="index.html">Yann Brunelle</a>
+
+		<button
+        class="burger-menu"
+        type="button"
+        aria-controls="menu"
+        aria-expanded="false"
+        aria-label="Ouvrir le menu">
+     	</button>
+
+		<nav class="hidden-nav" role="navigation" aria-label="skip menu">
+			<ul id="menu" data-visible="false"> <!-- data : préfixe permettant de créer un attribut personnalisé - visible : non que j'ai choisis pour l'attribut - false : valeur indiquant que le menu est initialement fermé -->
+				<li><a href="index.html">Accueil</a></li>
+				<li><a href="mes-projets.html">Projets</a></li>
+				<li><a href="a-propos.html">À propos</a></li>
+				<li><a href="#contact">Contact</a></li>
+        	</ul>
+		</nav>
+		
 		<div>
 
 		</div>
 	</header>
 	<main>
 		<section class="hero">
-			<h1>
-				Hey, moi c'est <span>Yann !</span>
+			<h1 class="mobile-main-heading">
+				Hey, moi c'est <span class="h1-color">Yann !</span>
 			</h1>
-			<p>
+			<p class="mobile-subheading">
 				Développeur web et web mobile en formation.
 			</p>
-			<p>
+			<p class="mobile-body-text">
 				Après plusieurs expériences dans la technique, le commerce et le management, je me forme aujourd’hui au développement web pour donner vie à de nouveaux projets.
 			</p>
-			<div>
-				<a href="mes-projets.html">Voir mes proejts</a>
-				<a href="telecharger-cv.pdf">Télécharger mon CV</a>
+			<div class="interface-text actions">
+				<a class="full-button" href="mes-projets.html">Voir mes projets</a>
+				<a class="empty-button" href="telecharger-cv.pdf">Télécharger mon CV</a>
 			</div>
 		</section>
 		<section class="carrousel">
-			
+			<p class="exemple">
+				Ici le carrousel
+			</p>
 		</section>
-		<section>
-			<h2>
+		<section class="a-propos">
+			<h2 class="mobile-section-heading">
 				Un parcours varié, une nouvelle direction.
 			</h2>
-			<p>
+			<p class="mobile-body-text">
 				De la mécanique aéronautique dans la Marine nationale à la gestion d’une boutique Apple, mon parcours m’a appris la rigueur, l’écoute et le travail en équipe. Aujourd’hui, je me forme au développement web avec l’envie de comprendre, de relever des défis et de construire des projets concrets.
 			</p>
-			<a href="a-propos.html">Découvrir mon parcours</a>
+			<a class="full-button interface-text actions" href="a-propos.html">Découvrir mon parcours</a>
 		</section>
-		<section>
-			<h2>
+		<section class="skills">
+			<h2 class="mobile-section-heading">
 				Mes compétences et mes atouts
 			</h2>
-			<article>
-				<h3>
+			<article class="cards mobile-body-text">
+				<h3 class="mobile-subheading">
 					Développement Web
 				</h3>
 				<div>
@@ -83,8 +101,8 @@
 					</p>
 				</div>
 			</article>
-			<article>
-				<h3>
+			<article class="cards mobile-body-text">
+				<h3 class="mobile-subheading">
 					Conception et outils
 				</h3>
 				<div>
@@ -99,8 +117,8 @@
 					</p>
 				</div>
 			</article>
-			<article>
-				<h3>
+			<article class="cards mobile-body-text">
+				<h3 class="mobile-subheading">
 					Management
 				</h3>
 				<div>
@@ -119,41 +137,47 @@
 				</div>
 			</article>
 		</section>
-		<section>
-			<div>
-				<h2>
-					Et si on travaillait ensemble ?
+		<section class="contact mobile-body-text">
+			<div class="presentation">
+				<h2 id="contact" class="mobile-section-heading">
+					Et si on travaillait ensemble ?
 				</h2>
 				<p>
 					Je recherche un stage en développement web pour mettre mes compétences en pratique et continuer à apprendre au sein d’une équipe. Échangeons sur ce que nous pourrions construire ensemble.
 				</p>
 			</div>
-			<div>
-				<div>
-					<div>
-						<p>
+			<div class="form">
+				<div class="identity">
+					<div class="name-entry">
+						<p class="interface-text wording">
 							Votre nom
 						</p>
-						<p>
-							Ex : Dupond
-						</p>
+						<div class="entry">
+							<p>
+								Ex : Dupond
+							</p>
+						</div>
 					</div>
 					<div>
-						<p>
+						<p class="interface-text wording">
 							Votre adresse e-mail
 						</p>
-						<p>
-							Ex : dupond@mail.com
-						</p>
+						<div class="entry">
+							<p>
+								Ex : dupond@mail.com
+							</p>
+						</div>
 					</div>
 				</div>
 				<div>
-					<p>
+					<p class="interface-text wording">
 						Votre message
 					</p>
-					<p>
-						Ex. : Une opportunité de stage, une question, un projet...
-					</p>
+					<div class="entry">
+						<p>
+							Ex. : Une opportunité de stage, une question, un projet...
+						</p>
+					</div>
 				</div>
 				<div>
 					<button>
