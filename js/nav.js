@@ -1,14 +1,15 @@
+const bouton = document.querySelector(".burger-menu");
 const menu = document.querySelector("#menu");
-const burger = document.querySelector(".burger-menu");
 
-burger.addEventListener("click", () => {
-  const visibility = menu.getAttribute("data-visible");
-
-  if (visibility === "false") {
-    menu.setAttribute("data-visible", "true");
-    burger.setAttribute("aria-expanded", "true");
-  } else {
-    menu.setAttribute("data-visible", "false");
-    burger.setAttribute("aria-expanded", "false");
+bouton.addEventListener("click", function () {
+  if (menu.getAttribute("data-visible") === "false") {
+    console.log(menu.getAttribute("data-visible"));
+    menu.setAttribute("data-visible", "true")
+    bouton.setAttribute("aria-expanded", "true")
+  }
+  else {
+    console.log(menu.getAttribute("data-visible"));
+    menu.setAttribute("data-visible", "false")
+    bouton.setAttribute("aria-expanded", "false")
   }
 });
