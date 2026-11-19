@@ -216,6 +216,13 @@ address {
   color: var(--main-text);
  }
 
+ .mobile-small-subheading {
+  font-family: 'Nunito Sans';
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+ }
+
  .desktop-body-text {
   font-family: 'Poppins';
   font-weight: 400;
@@ -229,6 +236,13 @@ address {
   font-size: 1.6rem;
   line-height: 2.6rem;
   color: var(--secondary-text);
+ }
+
+ .mobile-small-body-text {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
  }
 
  .interface-text {
@@ -426,15 +440,7 @@ address {
   color: var(--main-text);
 }
 
-.carrousel {
-  position: relative;
-  width: 100%;
-  padding-inline: 3.2rem;
-  padding-block: 4.8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 .exemple {
   color: var(--main-text);
@@ -606,4 +612,113 @@ footer p {
 
 footer a {
   color: var(--main-text);
+}
+
+/* Carrousel */
+
+.carrousel {
+  position: relative;
+  width: 100%;
+  padding-inline: 3.2rem;
+  padding-block: 4.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.projects {
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  gap: 2.4rem;
+}
+
+.carrousel::before {
+  inset-inline: 0;
+  inset-block-start: 0;
+  position: absolute;
+  display: block;
+  content: "";
+  background-image: var(--gradient-separator);
+  width: 100%;
+  height: 2px;
+}
+
+.projects h3 {
+  color: var(--main-text);
+}
+
+.projects p {
+  color: var(--secondary-text);
+}
+
+.article-project {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 0.8rem;
+  border: solid 1px var(--purple);
+  border-radius: 0.8rem;
+  width: 20rem;
+  flex-shrink: 0;
+}
+
+.central {
+  border-width: 3px;
+}
+
+.a-gauche {
+  order: -1;
+}
+
+.masquee {
+  display: none;
+}
+
+.commands {
+  display: flex;
+  gap: 1.6rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.commands p {
+  color: var(--main-text);
+}
+
+.carrousel a {
+  color: var(--purple);
+}
+
+.link-project {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.command-left, .command-right {
+  width: 3rem;
+  height: 3rem;
+  box-shadow: inset 0 0 0 1px var(--purple);
+  padding-inline: 0.4rem;
+  border-radius: 0.8rem;
+}
+
+.command-left {
+  background-image: url(../img/fleche-gauche.svg);
+  background-repeat: no-repeat;
+  background-color: var(--button-bg);
+  background-position: center;
+}
+
+.command-right {
+  background-image: url(../img/fleche-droite.svg);
+  background-repeat: no-repeat;
+  background-color: var(--button-bg);
+  background-position: center;
+}
+
+.command img {
+  width: 100%;
 }
