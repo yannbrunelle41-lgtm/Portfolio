@@ -671,6 +671,10 @@ footer a {
   order: -1;
 }
 
+.a-droite {
+  order: 1;
+}
+
 .masquee {
   display: none;
 }
