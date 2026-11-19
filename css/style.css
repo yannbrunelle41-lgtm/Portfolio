@@ -633,6 +633,24 @@ footer a {
   gap: 2.4rem;
 }
 
+/* Les cartes partagent une case au centre. Le JS les déplace sur la roue
+   depuis ce point commun. La grille garde la hauteur de la carte la plus haute. */
+.projects.roue-active {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  perspective: 80rem;
+  padding-block: 1.6rem;
+}
+
+/* Le cadre coupe les côtés sur mobile. Le fond évite de voir le texte
+   d'une carte à travers celle qui passe devant. */
+.roue-active .article-project {
+  grid-area: 1 / 1;
+  justify-self: center;
+  background-color: var(--main-bg);
+}
+
 .carrousel::before {
   inset-inline: 0;
   inset-block-start: 0;
@@ -661,10 +679,6 @@ footer a {
   border-radius: 0.8rem;
   width: 20rem;
   flex-shrink: 0;
-}
-
-.central {
-  border-width: 3px;
 }
 
 .a-gauche {
