@@ -255,8 +255,8 @@ address {
   font-family: 'Poppins';
   font-style: italic;
   font-weight: 500;
-  font-size: 1.8rem;
-  line-height: 3rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
  }
 
  /* nunito-sans-regular - latin */
@@ -319,7 +319,7 @@ address {
  body {
   position: relative;
   background-color: var(--main-bg);
-  max-width: 1440px;
+  max-width: 2500px;
   margin-inline: auto;
   justify-items: center;
   display: flex;
@@ -348,6 +348,8 @@ address {
   gap: 2.4rem;
  }
 
+ 
+
  .hero::after {
   content: "";
   background-image: url(../img/halo-2-mobile.svg);
@@ -358,6 +360,7 @@ address {
   rotate: -45deg;
   top: 20rem;
   right: -28rem;
+  pointer-events: none;
  }
 
  #menu {
@@ -405,12 +408,16 @@ address {
  }
 
  header {
-  position: relative;
+  position: sticky; /* position fixe au défilement */
+  top: 0;
+  z-index: 1;
+  background-color: var(--main-bg);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-inline: 3.2rem;
   padding-block: 0.8rem;
+  overflow-x: clip;
  }
 
  header a{
@@ -507,18 +514,24 @@ address {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  align-items: center;
 }
 
-.skills::after {
+#contact {
+  position: relative;
+}
+
+#contact::before {
   content: "";
   background-image: url(../img/halo-1-mobile.svg);
   background-repeat: no-repeat;
   position: absolute;
-  width: 48.7rem;
-  height: 63rem;
+  width: 52.4rem;
+  height: 28rem;
+  top: -12.2rem;
+  left: -26.1rem;
   rotate: -45deg;
-  top: 57rem;
-  left: -10rem;
+  z-index: -1;
 }
 
 .cards {
@@ -531,7 +544,7 @@ address {
   border-radius: 0.8rem;
   padding-inline: 1.6rem;
   padding-block: 0.8rem;
-  max-width: 38.4rem;
+  max-width: 58rem;
   background-color: var(--button-bg);
 }
 
@@ -592,6 +605,7 @@ address {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  align-items: center;
 }
 
 .contact input::placeholder, #message-form::placeholder {
@@ -603,6 +617,17 @@ address {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.name-entry, .identity {
+  width: 100%;
+  max-width: 58rem;
+}
+
+.identity input {
+  width: 100%;
 }
 
 .example {
@@ -790,11 +815,11 @@ footer a {
   width: 100%;
 }
 
-@media screen and (min-width: 48em) {
 
-  
 
-  /* À 1 440 px, la carte centrale mesure 48 rem. Près de 768 px,
+@media screen and (min-width: 64em) {
+
+   /* À 1 440 px, la carte centrale mesure 48 rem. Près de 768 px,
      les cartes rétrécissent avec la piste pour rester visibles ensemble. */
   .carrousel .article-project {
     width: min(40%, 48rem);
@@ -816,16 +841,6 @@ footer a {
     object-position: center top;
   }
 
-  .carrousel .article-project h3 {
-    font-size: clamp(1.8rem, 1.67vw, 2.4rem);
-    line-height: 1.5;
-  }
-
-  .carrousel .article-project p {
-    font-size: clamp(1.4rem, 1.25vw, 1.8rem);
-    line-height: 1.65;
-  }
-
   /* Les commandes et le lien reprennent les dimensions desktop. */
   .carrousel .command-left,
   .carrousel .command-right {
@@ -842,19 +857,24 @@ footer a {
   }
 
   .carrousel, .a-propos, .skills, .contact  {
-    padding-inline: 12rem;
     padding-block: 8rem;
   }
 
-  /* La piste fait jusqu’à 120 rem, comme dans la maquette desktop. */
-  .carrousel {
+  /* Les marges latérales grandissent pour centrer le contenu sur 120 rem. */
+  header,
+  .hero,
+  .carrousel,
+  .a-propos,
+  .skills,
+  .contact {
     padding-inline: max(12rem, calc((100% - 120rem) / 2));
   }
 
-  .carrousel h2 {
-    font-size: 4rem;
-    line-height: 6rem;
-  }
+  header {
+  position: relative; 
+  background-color: none;
+  padding-block: 3.2rem;
+ }
 
   .burger-menu {
     display: none;
@@ -869,6 +889,7 @@ footer a {
   #menu {
     padding: 0;
     margin: 0;
+    background-color: transparent;
   }
 
   #menu::before {
@@ -881,10 +902,6 @@ footer a {
     height: auto;
   }
 
-  header {
-    padding-inline: 12rem;
-    padding-block: 3.2rem;
-  }
 
   header a {
     display: block;
@@ -894,9 +911,10 @@ footer a {
     text-align: left;
     align-content: flex-start;
     padding-block: 12rem;
-    padding-inline: 12rem;
     gap: 3.2rem;
   }
+
+
 
   .actions {
     flex-direction: row;
@@ -914,7 +932,7 @@ footer a {
   .full-button, .empty-button {
     flex: 1;
     padding-inline: 2.4rem;
-    padding-block: 1.6rem;
+    padding-block: 1.2rem;
   }
 
   .hero-text {
@@ -935,21 +953,40 @@ footer a {
     display: none;
   }
 
+  header::before {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url(../img/halo-sky.svg);
+    width: 277.2rem;
+    height: 277.2rem;
+    top: -138.6rem;
+    right: calc(max(0px, (100% - 1440px) / 2) - 138.6rem);
+    pointer-events: none;
+  }
+
   .a-propos::after {
     content: "";
-    background-image: url(../img/halo-2-mobile.svg);
+    background-image: url(../img/Halo-2-test.svg);
     background-repeat: no-repeat;
+    background-size: contain;
     position: absolute;
-    width: 75rem;
-    height: 96rem;
-    rotate: -45deg;
-    top: -22rem;
-    right: -59rem;
+    width: 86.5rem;
+    height: 86.5rem;
+    top: -23.6rem;
+    /* 100% est la largeur de la section .a-propos.
+       On retire les 1 440 px du cadre centré, puis on divise par deux
+       pour trouver la marge à droite. max(0px, ...) empêche cette marge
+       de devenir négative si la section est plus étroite que le cadre.
+       calc() soustrait ensuite 49.9rem pour décaler le halo vers la droite. */
+    right: calc(max(0px, (100% - 1440px) / 2) - 49.9rem);
+    pointer-events: none;
   }
 
   .skills {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 colonnes de tailles égales même si une colonne a plus de texte */
+    align-items: stretch;
     row-gap: 4.8rem;
   }
 
@@ -970,12 +1007,70 @@ footer a {
     gap: 1.2rem;
   }
 
+  /* Les classes du HTML reprennent les tailles de la maquette desktop. */
+  .mobile-main-heading {
+    font-size: 5.6rem;
+    line-height: normal;
+  }
+
+  .mobile-section-heading {
+    font-size: 4rem;
+    line-height: 6rem;
+  }
+
+  .mobile-subheading,
+  .mobile-small-subheading {
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+  }
+
+  .mobile-body-text,
+  .mobile-small-body-text {
+    font-size: 1.8rem;
+    line-height: 3rem;
+  }
+
   .contact {
+    flex-direction: row;
+    gap: 3.2rem;
+  }
+
+  .presentation {
+    display: flex;
+    flex: 1;
+    gap: 2.4rem;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .form {
+    display: flex;
+    flex: 1;
+    gap: 2.4rem;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .identity {
+    display: flex;
     flex-direction: row;
   }
 
+  .name-entry {
+    flex: 1;
+    min-width: 0;
+  }
 
-
-
+  .entry {
+    width: 100%;
+    max-width: 58rem;
+  }
   
+  .sent-message {
+    display: flex;
+    justify-items: end;
+    width: fit-content;
+    margin-left: auto;
+  }
+
 }
