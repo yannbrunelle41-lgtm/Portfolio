@@ -66,17 +66,11 @@ function dessinerRoue(rotation) {
     // Le cosinus vaut 1 devant, 0 sur les côtés et -1 tout à l'arrière.
     const profondeur = Math.cos(angle);
 
-    // Le sinus donne la position gauche/droite en largeur de carte.
-    // Le cosinus place la carte à l'avant (0 rem) ou à l'arrière (-16 rem).
-    // On limite l'inclinaison pour laisser les faces latérales visibles.
-    // On convertit la position latérale en pourcentage de la largeur de la carte, jusqu'à 105 % de chaque côté.
-    const x = positionLaterale * 105;
-    // Soustraire 1 place l'avant à zéro. Multiplier par 8 donne le recul en rem sur l'axe Z.
-    const z = (profondeur - 1) * 8;
-    // On convertit la position latérale en un angle compris entre -30° et +30°. Au centre, l'angle vaut 0°.
-    const inclinaison = positionLaterale * 30;
-    // translate3d déplace la carte sur les axes X, Y et Z. rotateY la pivote autour de son axe vertical.
-    carte.style.transform = `translate3d(${x}%, 0, ${z}rem) rotateY(${inclinaison}deg)`;
+    // Le CSS convertit cette valeur en décalage horizontal et en inclinaison.
+    carte.style.setProperty("--position-roue", positionLaterale);
+    // L'avant vaut 0, les côtés -1 et l'arrière -2. Le CSS choisit
+    // combien de rem représentent ces valeurs sur mobile et sur desktop.
+    carte.style.setProperty("--recul-roue", profondeur - 1);
 
     // Les cartes restent opaques à l'avant et s'effacent en passant derrière.
     // L'ordre des couches garde les cartes proches devant les cartes éloignées.

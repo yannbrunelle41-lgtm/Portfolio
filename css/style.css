@@ -160,8 +160,8 @@ address {
   --purple: #B88AE8;
   --gradient-separator: radial-gradient(
     ellipse at center,
-    #7040A0CC 0%,
-    #05050700 80%
+    #A050E0CC 0%,
+    #05050700 60%
     );
   --gradient-button: linear-gradient(
     to bottom,
@@ -196,7 +196,6 @@ address {
   font-weight: 800;
   font-size: 3.6rem;
   line-height: 4.4rem;
-  text-align: center;
   color: var(--main-text);
  }
 
@@ -320,9 +319,15 @@ address {
  body {
   position: relative;
   background-color: var(--main-bg);
+  max-width: 1440px;
+  margin-inline: auto;
   justify-items: center;
   display: flex;
   flex-direction: column;
+ }
+
+ main {
+  overflow-x: clip;
  }
 
  .hero {
@@ -334,6 +339,25 @@ address {
   flex-direction: column;
   justify-content: center;
   gap: 2.4rem;
+  text-align: center;
+ }
+
+ .hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+ }
+
+ .hero::after {
+  content: "";
+  background-image: url(../img/halo-2-mobile.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 48.7rem;
+  height: 63rem;
+  rotate: -45deg;
+  top: 20rem;
+  right: -28rem;
  }
 
  #menu {
@@ -343,13 +367,12 @@ address {
   gap: 3.2rem;
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
   padding-block: 2.4rem;
  }
 
  #menu::before {
   content: "";
-  background-image: url(../img/halo-burger.svg);
+  background-image: url(../img/halo-1-mobile.svg);
   width: 53rem;
   height: 28rem;
   left: -30rem;
@@ -399,6 +422,10 @@ address {
   width: 2.5rem;
   height: 2.5rem;
   background-color: transparent;
+ }
+
+ .burger-menu[aria-expanded="true"] {
+  background-image: url(../img/Menu-burger-open.svg);
  }
 
  .actions {
@@ -482,6 +509,18 @@ address {
   gap: 3.2rem;
 }
 
+.skills::after {
+  content: "";
+  background-image: url(../img/halo-1-mobile.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 48.7rem;
+  height: 63rem;
+  rotate: -45deg;
+  top: 57rem;
+  left: -10rem;
+}
+
 .cards {
   display: flex;
   flex-direction: column;
@@ -517,6 +556,8 @@ address {
   gap: 3.2rem;
   color: var(--secondary-text);
 }
+
+
 
 .wording {
   color: var(--main-text);
@@ -627,6 +668,7 @@ footer a {
 }
 
 .projects {
+  position: relative;
   display: flex;
   justify-content: center;
   overflow-x: hidden;
@@ -649,6 +691,13 @@ footer a {
   grid-area: 1 / 1;
   justify-self: center;
   background-color: var(--main-bg);
+  /* Les valeurs envoyées par le JS sont sans unité. Le CSS fixe la taille
+     de la roue et le recul des cartes pour chaque largeur d’écran. */
+  transform: translate3d(
+    calc(var(--position-roue, 0) * 105%),
+    0,
+    calc(var(--recul-roue, 0) * var(--profondeur-roue, 8rem))
+  ) rotateY(calc(var(--position-roue, 0) * 30deg));
 }
 
 .carrousel::before {
@@ -739,4 +788,194 @@ footer a {
 
 .command img {
   width: 100%;
+}
+
+@media screen and (min-width: 48em) {
+
+  
+
+  /* À 1 440 px, la carte centrale mesure 48 rem. Près de 768 px,
+     les cartes rétrécissent avec la piste pour rester visibles ensemble. */
+  .carrousel .article-project {
+    width: min(40%, 48rem);
+    padding: clamp(0.8rem, 1.2vw, 1.6rem);
+    background-color: var(--button-bg);
+  }
+
+  /* Les cartes latérales reculent davantage et s’assombrissent
+     progressivement au fil de la rotation. */
+  .carrousel .roue-active .article-project {
+    --profondeur-roue: 16rem;
+    filter: brightness(calc(1 + var(--recul-roue, 0) * 0.3));
+  }
+
+  .carrousel .article-project img {
+    width: 100%;
+    aspect-ratio: 446 / 181;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .carrousel .article-project h3 {
+    font-size: clamp(1.8rem, 1.67vw, 2.4rem);
+    line-height: 1.5;
+  }
+
+  .carrousel .article-project p {
+    font-size: clamp(1.4rem, 1.25vw, 1.8rem);
+    line-height: 1.65;
+  }
+
+  /* Les commandes et le lien reprennent les dimensions desktop. */
+  .carrousel .command-left,
+  .carrousel .command-right {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+
+  .carrousel .link-project a {
+    padding: 1.5rem 2.5rem;
+    color: var(--main-text);
+    background-color: var(--button-bg);
+    border-radius: 0.8rem;
+    box-shadow: inset 0 0 0 1px var(--purple), 0 0.2rem 1rem var(--outline);
+  }
+
+  .carrousel, .a-propos, .skills, .contact  {
+    padding-inline: 12rem;
+    padding-block: 8rem;
+  }
+
+  /* La piste fait jusqu’à 120 rem, comme dans la maquette desktop. */
+  .carrousel {
+    padding-inline: max(12rem, calc((100% - 120rem) / 2));
+  }
+
+  .carrousel h2 {
+    font-size: 4rem;
+    line-height: 6rem;
+  }
+
+  .burger-menu {
+    display: none;
+  }
+
+  #menu[data-visible="false"]{
+    transform: none;
+    flex-direction: row;
+    position: relative;
+  }
+
+  #menu {
+    padding: 0;
+    margin: 0;
+  }
+
+  #menu::before {
+    display: none;
+  }
+
+  .hidden-nav {
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+
+  header {
+    padding-inline: 12rem;
+    padding-block: 3.2rem;
+  }
+
+  header a {
+    display: block;
+  }
+
+  .hero {
+    text-align: left;
+    align-content: flex-start;
+    padding-block: 12rem;
+    padding-inline: 12rem;
+    gap: 3.2rem;
+  }
+
+  .actions {
+    flex-direction: row;
+    justify-items: flex-start;
+    margin: 0;
+    width: fit-content;
+    height: 100%;
+  }
+
+  .actions a {
+    flex: none;
+    width: auto;
+  }
+
+  .full-button, .empty-button {
+    flex: 1;
+    padding-inline: 2.4rem;
+    padding-block: 1.6rem;
+  }
+
+  .hero-text {
+    max-width: 76rem;
+    gap: 1.4rem;
+  }
+
+  .a-propos {
+    align-items: flex-start;
+    gap: 2.4rem;
+  }
+
+  .a-propos p {
+    max-width: 96rem;
+  }
+  
+  .hero::after {
+    display: none;
+  }
+
+  .a-propos::after {
+    content: "";
+    background-image: url(../img/halo-2-mobile.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 75rem;
+    height: 96rem;
+    rotate: -45deg;
+    top: -22rem;
+    right: -59rem;
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 4.8rem;
+  }
+
+  .skills h2 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .cards {
+    gap: 2.4rem;
+  }
+
+  .cards div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .contact {
+    flex-direction: row;
+  }
+
+
+
+
+  
 }
