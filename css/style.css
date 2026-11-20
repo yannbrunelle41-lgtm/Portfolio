@@ -74,7 +74,7 @@ select {
   html:focus-within {
    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -84,7 +84,6 @@ select {
     scroll-behavior: auto !important;
   }
 }
-
 
 html {
     font-size: 62.5%; /* 1rem = 10px avec une base utilisateur de 16px */
@@ -140,7 +139,6 @@ address {
   white-space: normal;
 }
 
-
 /* Print external URLs */
 @media print {
   a[href]:not([href^='#'])::after {
@@ -148,10 +146,9 @@ address {
   }
 }
 
-/* STYLE */
+/* Couleurs et dégradés */
 
-
- :root {
+:root {
   /* color */
   --main-bg: #050507;
   --button-bg: #19151F;
@@ -171,7 +168,68 @@ address {
   --outline: #B88AE84D;
  }
 
- .desktop-main-heading {
+/* Polices */
+
+/* nunito-sans-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/nunito-sans-v19-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* nunito-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/nunito-sans-v19-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* nunito-sans-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/nunito-sans-v19-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/poppins-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/poppins-v24-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/poppins-v24-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/poppins-v24-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* Typographie */
+
+.desktop-main-heading {
   font-family: 'Nunito Sans';
   font-weight: 800;
   font-size: 5.6rem;
@@ -184,7 +242,7 @@ address {
   line-height: 6rem;
  }
 
- .sesktop-subheading {
+ .desktop-subheading {
   font-family: 'Nunito Sans';
   font-weight: 700;
   font-size: 2.4rem;
@@ -259,64 +317,13 @@ address {
   line-height: 2rem;
  }
 
- /* nunito-sans-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Nunito Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/nunito-sans-v19-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* nunito-sans-700 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Nunito Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/nunito-sans-v19-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* nunito-sans-800 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Nunito Sans';
-  font-style: normal;
-  font-weight: 800;
-  src: url('../fonts/nunito-sans-v19-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* poppins-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/poppins-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* poppins-500 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 500;
-  src: url('../fonts/poppins-v24-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* poppins-600 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../fonts/poppins-v24-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* poppins-italic - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Poppins';
-  font-style: italic;
-  font-weight: 400;
-  src: url('../fonts/poppins-v24-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+.h1-color {
+  color: var(--purple);
 }
 
- body {
+/* Structure générale */
+
+body {
   position: relative;
   background-color: var(--main-bg);
   max-width: 2500px;
@@ -330,40 +337,9 @@ address {
   overflow-x: clip;
  }
 
- .hero {
-  position: relative;
-  width: 100%;
-  padding-inline: 3.2rem;
-  padding-block: 4.8rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2.4rem;
-  text-align: center;
- }
+/* Header et navigation */
 
- .hero-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
- }
-
- 
-
- .hero::after {
-  content: "";
-  background-image: url(../img/halo-2-mobile.svg);
-  background-repeat: no-repeat;
-  position: absolute;
-  width: 48.7rem;
-  height: 63rem;
-  rotate: -45deg;
-  top: 20rem;
-  right: -28rem;
-  pointer-events: none;
- }
-
- #menu {
+#menu {
   background-color: var(--main-bg);
   list-style: none;
   padding: 0;
@@ -386,7 +362,7 @@ address {
 
  #menu[data-visible="false"] {
   transform: translateX(-100%);
-  transition: 350ms;  
+  transition: 350ms;
  }
 
  #menu[data-visible="true"] {
@@ -435,7 +411,9 @@ address {
   background-image: url(../img/Menu-burger-open.svg);
  }
 
- .actions {
+/* Boutons */
+
+.actions {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -444,138 +422,39 @@ address {
   padding-block: 0.8rem;
   width: fit-content;
   margin-inline: auto;
-  
+
  }
 
-.h1-color {
-  color: var(--purple);
+.full-button,
+.empty-button {
+  display: block;
+  padding-inline: 1.6rem;
+  padding-block: 0.8rem;
+  box-shadow: inset 0 0 0 1px var(--outline);
+  border-radius: 0.8rem;
+  color: var(--main-text);
 }
 
 .full-button {
-  display: block;
   background-image: var(--gradient-button);
-  padding-inline: 1.6rem;
-  padding-block: 0.8rem;
   width: 100%;
-  box-shadow: inset 0 0 0 1px var(--outline);
-  border-radius: 0.8rem;
-  color: var(--main-text);
   margin-inline: auto;
-  }
-
-.empty-button {
-  display: block;
-  background-color: var(--button-bg);
-  padding-inline: 1.6rem;
-  padding-block: 0.8rem;
-  box-shadow: inset 0 0 0 1px var(--outline);
-  border-radius: 0.8rem;
-  width: fit-content;
-  color: var(--main-text);
 }
 
-
+.empty-button {
+  background-color: var(--button-bg);
+  width: fit-content;
+}
 
 .exemple {
   color: var(--main-text);
 }
 
-.a-propos {
-  position: relative;
-  width: 100%;
-  padding-inline: 3.2rem;
-  padding-block: 4.8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.4rem;
-}
+/* Séparateurs des sections */
 
-.a-propos .full-button {
-  width: fit-content;
-}
-
-.a-propos::before {
-  inset-inline: 0;
-  inset-block-start: 0;
-  position: absolute;
-  display: block;
-  content: "";
-  background-image: var(--gradient-separator);
-  width: 100%;
-  height: 2px;
-}
-
-.skills {
-  position: relative;
-  width: 100%;
-  padding-inline: 3.2rem;
-  padding-block: 4.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
-  align-items: center;
-}
-
-#contact {
-  position: relative;
-}
-
-#contact::before {
-  content: "";
-  background-image: url(../img/halo-1-mobile.svg);
-  background-repeat: no-repeat;
-  position: absolute;
-  width: 52.4rem;
-  height: 28rem;
-  top: -12.2rem;
-  left: -26.1rem;
-  rotate: -45deg;
-  z-index: -1;
-}
-
-.cards {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  width: 100%;
-  color: var(--secondary-text);
-  border: solid 1px var(--purple);
-  border-radius: 0.8rem;
-  padding-inline: 1.6rem;
-  padding-block: 0.8rem;
-  max-width: 58rem;
-  background-color: var(--button-bg);
-}
-
-.skills::before {
-  inset-inline: 0;
-  inset-block-start: 0;
-  position: absolute;
-  display: block;
-  content: "";
-  background-image: var(--gradient-separator);
-  width: 100%;
-  height: 2px;
-}
-
-.contact {
-  position: relative;
-  width: 100%;
-  padding-inline: 3.2rem;
-  padding-block: 4.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
-  color: var(--secondary-text);
-}
-
-
-
-.wording {
-  color: var(--main-text);
-}
-
+.carrousel::before,
+.a-propos::before,
+.skills::before,
 .contact::before {
   inset-inline: 0;
   inset-block-start: 0;
@@ -587,100 +466,40 @@ address {
   height: 2px;
 }
 
-.identity {
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
-}
+/* Accueil — Hero */
 
-.entry {
-  background-color: var(--button-bg);
-  border: solid 1px var(--purple);
-  padding: 1rem;
-  border-radius: 0.8rem;
-  width: 100%;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
-  align-items: center;
-}
-
-.contact input::placeholder, #message-form::placeholder {
-  color: var(--secondary-text);
-  font-style: italic;
-}
-
-.name-entry {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  flex: 1;
-  min-width: 0;
-}
-
-.name-entry, .identity {
-  width: 100%;
-  max-width: 58rem;
-}
-
-.identity input {
-  width: 100%;
-}
-
-.example {
-  background-color: var(--button-bg);
-  border: none;
-  color: var(--main-text);
-  outline: none;
-}
-
-#message-form {
-  width: 100%;
-  min-height: 24rem;
-}
-
-.form .full-button {
-  width: fit-content;
-}
-
-footer {
+.hero {
   position: relative;
+  width: 100%;
+  padding-inline: 3.2rem;
+  padding-block: 4.8rem;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  padding-inline: 3.2rem;
-  padding-block: 0.8rem;
-  text-align: center;
-  align-items: center;
-  color: var(--main-text);
-}
-
-.footer-div {
-  display: flex;
   justify-content: center;
-  gap: 1.6rem;
-}
+  gap: 2.4rem;
+  text-align: center;
+ }
 
-footer::before {
+ .hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+ }
+
+ .hero::after {
   content: "";
-  width: 100%;
-  height: 1px;
-  background-color: var(--outline);
-  inset-inline: 3.2rem;
-}
+  background-image: url(../img/halo-2-mobile.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 48.7rem;
+  height: 63rem;
+  rotate: -45deg;
+  top: 20rem;
+  right: -28rem;
+  pointer-events: none;
+ }
 
-footer p {
-  order: -1;
-}
-
-footer a {
-  color: var(--main-text);
-}
-
-/* Carrousel */
+/* Accueil — Carrousel */
 
 .carrousel {
   position: relative;
@@ -723,17 +542,6 @@ footer a {
     0,
     calc(var(--recul-roue, 0) * var(--profondeur-roue, 8rem))
   ) rotateY(calc(var(--position-roue, 0) * 30deg));
-}
-
-.carrousel::before {
-  inset-inline: 0;
-  inset-block-start: 0;
-  position: absolute;
-  display: block;
-  content: "";
-  background-image: var(--gradient-separator);
-  width: 100%;
-  height: 2px;
 }
 
 .projects h3 {
@@ -815,11 +623,334 @@ footer a {
   width: 100%;
 }
 
+/* Accueil — À propos */
 
+.a-propos {
+  position: relative;
+  width: 100%;
+  padding-inline: 3.2rem;
+  padding-block: 4.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.a-propos .full-button {
+  width: fit-content;
+}
+
+/* Accueil — Compétences */
+
+.skills {
+  position: relative;
+  width: 100%;
+  padding-inline: 3.2rem;
+  padding-block: 4.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+  color: var(--secondary-text);
+  border: solid 1px var(--purple);
+  border-radius: 0.8rem;
+  padding-inline: 1.6rem;
+  padding-block: 0.8rem;
+  max-width: 58rem;
+  background-color: var(--button-bg);
+}
+
+/* Accueil — Contact */
+
+#contact {
+  position: relative;
+}
+
+#contact::before {
+  content: "";
+  background-image: url(../img/halo-1-mobile.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 52.4rem;
+  height: 28rem;
+  top: -12.2rem;
+  left: -26.1rem;
+  rotate: -45deg;
+  z-index: -1;
+}
+
+.contact {
+  position: relative;
+  width: 100%;
+  padding-inline: 3.2rem;
+  padding-block: 4.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  color: var(--secondary-text);
+}
+
+.wording {
+  color: var(--main-text);
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.entry {
+  background-color: var(--button-bg);
+  border: solid 1px var(--purple);
+  padding: 1rem;
+  border-radius: 0.8rem;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.contact input::placeholder, #message-form::placeholder {
+  color: var(--secondary-text);
+  font-style: italic;
+}
+
+.name-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.name-entry, .identity {
+  width: 100%;
+  max-width: 58rem;
+}
+
+.identity input {
+  width: 100%;
+}
+
+.example {
+  background-color: var(--button-bg);
+  border: none;
+  color: var(--main-text);
+  outline: none;
+}
+
+#message-form {
+  width: 100%;
+  min-height: 24rem;
+}
+
+.form .full-button {
+  width: fit-content;
+}
+
+/* Mentions légales */
+
+ul.list-perso { /*  */
+  list-style: disc;
+  padding-inline: 3.2rem;
+}
+
+/* Footer */
+
+footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-inline: 3.2rem;
+  padding-block: 0.8rem;
+  text-align: center;
+  align-items: center;
+  color: var(--main-text);
+}
+
+.footer-div {
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+footer::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: var(--outline);
+  inset-inline: 3.2rem;
+}
+
+footer p {
+  order: -1;
+}
+
+footer a {
+  color: var(--main-text);
+}
+
+/* GENERAL */
+
+.padding-inline-mobile {
+  padding-inline: 3.2rem;
+  padding: 3.2rem;
+}
+
+.gap-column-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
 
 @media screen and (min-width: 64em) {
+  /* Typographie */
 
-   /* À 1 440 px, la carte centrale mesure 48 rem. Près de 768 px,
+  /* Les classes du HTML reprennent les tailles de la maquette desktop. */
+  .mobile-main-heading {
+    font-size: 5.6rem;
+    line-height: normal;
+  }
+
+  .mobile-section-heading {
+    font-size: 4rem;
+    line-height: 6rem;
+  }
+
+  .mobile-subheading,
+  .mobile-small-subheading {
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+  }
+
+  .mobile-body-text,
+  .mobile-small-body-text {
+    font-size: 1.8rem;
+    line-height: 3rem;
+  }
+
+  /* Marges communes */
+
+  .carrousel, .a-propos, .skills, .contact  {
+    padding-block: 8rem;
+  }
+
+  /* Les marges latérales grandissent pour centrer le contenu sur 120 rem. */
+  header,
+  .hero,
+  .carrousel,
+  .a-propos,
+  .skills,
+  .contact,
+  .mentionslegales {
+    padding-inline: max(12rem, calc((100% - 120rem) / 2));
+  }
+
+  /* Header et navigation */
+
+  header {
+  position: relative;
+  background-color: none;
+  padding-block: 3.2rem;
+ }
+
+  .burger-menu {
+    display: none;
+  }
+
+  #menu[data-visible="false"]{
+    transform: none;
+    flex-direction: row;
+    position: relative;
+  }
+
+  #menu {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+  }
+
+  #menu::before {
+    display: none;
+  }
+
+  .hidden-nav {
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+
+  header a {
+    display: block;
+  }
+
+header::before {
+    content: "";
+    position: absolute;
+    background-repeat: no-repeat;
+    background-image: url(../img/halo-sky.svg);
+    width: 277.2rem;
+    height: 277.2rem;
+    top: -138.6rem;
+    right: calc(max(0px, (100% - 1440px) / 2) - 138.6rem);
+    pointer-events: none;
+  }
+
+  /* Boutons */
+
+  .actions {
+    flex-direction: row;
+    justify-items: flex-start;
+    margin: 0;
+    width: fit-content;
+    height: 100%;
+  }
+
+  .actions a {
+    flex: none;
+    width: auto;
+  }
+
+  .full-button, .empty-button {
+    flex: 1;
+    padding-inline: 2.4rem;
+    padding-block: 1.2rem;
+  }
+
+  /* Accueil — Hero */
+
+  .hero {
+    text-align: left;
+    align-content: flex-start;
+    padding-block: 12rem;
+    gap: 3.2rem;
+  }
+
+.hero-text {
+    max-width: 76rem;
+    gap: 1.4rem;
+  }
+
+.hero::after {
+    display: none;
+  }
+
+  /* Accueil — Carrousel */
+
+  /* À 1 440 px, la carte centrale mesure 48 rem. Près de 768 px,
      les cartes rétrécissent avec la piste pour rester visibles ensemble. */
   .carrousel .article-project {
     width: min(40%, 48rem);
@@ -856,89 +987,7 @@ footer a {
     box-shadow: inset 0 0 0 1px var(--purple), 0 0.2rem 1rem var(--outline);
   }
 
-  .carrousel, .a-propos, .skills, .contact  {
-    padding-block: 8rem;
-  }
-
-  /* Les marges latérales grandissent pour centrer le contenu sur 120 rem. */
-  header,
-  .hero,
-  .carrousel,
-  .a-propos,
-  .skills,
-  .contact {
-    padding-inline: max(12rem, calc((100% - 120rem) / 2));
-  }
-
-  header {
-  position: relative; 
-  background-color: none;
-  padding-block: 3.2rem;
- }
-
-  .burger-menu {
-    display: none;
-  }
-
-  #menu[data-visible="false"]{
-    transform: none;
-    flex-direction: row;
-    position: relative;
-  }
-
-  #menu {
-    padding: 0;
-    margin: 0;
-    background-color: transparent;
-  }
-
-  #menu::before {
-    display: none;
-  }
-
-  .hidden-nav {
-    position: relative;
-    width: auto;
-    height: auto;
-  }
-
-
-  header a {
-    display: block;
-  }
-
-  .hero {
-    text-align: left;
-    align-content: flex-start;
-    padding-block: 12rem;
-    gap: 3.2rem;
-  }
-
-
-
-  .actions {
-    flex-direction: row;
-    justify-items: flex-start;
-    margin: 0;
-    width: fit-content;
-    height: 100%;
-  }
-
-  .actions a {
-    flex: none;
-    width: auto;
-  }
-
-  .full-button, .empty-button {
-    flex: 1;
-    padding-inline: 2.4rem;
-    padding-block: 1.2rem;
-  }
-
-  .hero-text {
-    max-width: 76rem;
-    gap: 1.4rem;
-  }
+  /* Accueil — À propos */
 
   .a-propos {
     align-items: flex-start;
@@ -948,24 +997,8 @@ footer a {
   .a-propos p {
     max-width: 96rem;
   }
-  
-  .hero::after {
-    display: none;
-  }
 
-  header::before {
-    content: "";
-    position: absolute;
-    background-repeat: no-repeat;
-    background-image: url(../img/halo-sky.svg);
-    width: 277.2rem;
-    height: 277.2rem;
-    top: -138.6rem;
-    right: calc(max(0px, (100% - 1440px) / 2) - 138.6rem);
-    pointer-events: none;
-  }
-
-  .a-propos::after {
+.a-propos::after {
     content: "";
     background-image: url(../img/Halo-2-test.svg);
     background-repeat: no-repeat;
@@ -982,6 +1015,8 @@ footer a {
     right: calc(max(0px, (100% - 1440px) / 2) - 49.9rem);
     pointer-events: none;
   }
+
+  /* Accueil — Compétences */
 
   .skills {
     display: grid;
@@ -1007,42 +1042,14 @@ footer a {
     gap: 1.2rem;
   }
 
-  /* Les classes du HTML reprennent les tailles de la maquette desktop. */
-  .mobile-main-heading {
-    font-size: 5.6rem;
-    line-height: normal;
-  }
-
-  .mobile-section-heading {
-    font-size: 4rem;
-    line-height: 6rem;
-  }
-
-  .mobile-subheading,
-  .mobile-small-subheading {
-    font-size: 2.4rem;
-    line-height: 3.6rem;
-  }
-
-  .mobile-body-text,
-  .mobile-small-body-text {
-    font-size: 1.8rem;
-    line-height: 3rem;
-  }
+  /* Accueil — Contact */
 
   .contact {
     flex-direction: row;
     gap: 3.2rem;
   }
 
-  .presentation {
-    display: flex;
-    flex: 1;
-    gap: 2.4rem;
-    flex-direction: column;
-    min-width: 0;
-  }
-
+  .presentation,
   .form {
     display: flex;
     flex: 1;
@@ -1065,12 +1072,11 @@ footer a {
     width: 100%;
     max-width: 58rem;
   }
-  
+
   .sent-message {
     display: flex;
     justify-items: end;
     width: fit-content;
     margin-left: auto;
   }
-
 }
