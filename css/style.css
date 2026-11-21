@@ -455,7 +455,9 @@ body {
 .carrousel::before,
 .a-propos::before,
 .skills::before,
-.contact::before {
+.contact::before,
+.formation::before,
+.contact-a-propos::before {
   inset-inline: 0;
   inset-block-start: 0;
   position: absolute;
@@ -478,6 +480,23 @@ body {
   justify-content: center;
   gap: 2.4rem;
   text-align: center;
+ }
+ 
+ .hero-portrait {
+  padding-block: 3.2rem;
+  gap: 4.8rem;
+ }
+
+
+ .hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  text-align: start  
+ }
+
+ .hero-text {
+  gap: 1.6rem;
  }
 
  .hero-text {
@@ -816,15 +835,129 @@ footer a {
   gap: 2.4rem;
 }
 
-.photo-portrait {
+.intro-portrait {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
   width: 100%;
-  height: 100%;
-  max-width: 20rem;
-  max-height: 200rem;
-  border: solid 1px var(--purple);
-  border-radius: 100%;
-  margin-inline: auto;
+}
 
+.intro-portrait-texte {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  text-align: left;
+}
+
+.photo-portrait {
+  width: 20rem;
+  max-width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: solid 2px var(--purple);
+  border-radius: 50%;
+}
+
+.intro-portrait-texte .cv-portrait {
+  align-self: center;
+  width: 20rem;
+  max-width: 100%;
+  padding-block: 0.9rem;
+  text-align: center;
+  box-shadow: inset 0 0 0 1px var(--outline), 0 0.2rem 1rem var(--outline);
+}
+
+.parcours{
+    display: grid;
+    grid-auto-rows: 1fr;
+    gap: 1.6rem;
+  }
+
+.parcours-professionnel {
+  justify-items: center;
+}
+
+.parcours .cards {
+  justify-content: center;
+}
+
+.DWW26 {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-inline: 1.6rem;
+  border: solid 1px var(--purple);
+  background-color: var(--button-bg);
+  border-radius: 0.8rem;
+  width: 100%;
+  padding-block: 0.8rem;
+}
+
+.formation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-inline: 3.2rem;
+  padding-block: 4.8rem;
+  align-items: center;
+}
+
+.skills-formation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skills-formation-text {
+  border: 1px solid var(--outline);
+  padding-inline: 0.8rem;
+  padding-block: 0.2rem;
+  border-radius: 0.4rem;
+}
+
+.DWW26-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-a-propos {
+  position: relative;
+  width: 100%;
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  align-items: center;
+  text-align: center;
+}
+
+/* Halos de la page À propos, placés derrière le contenu. */
+.hero-portrait::after,
+.contact-a-propos::after {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero-portrait::after {
+  background-image: url(../img/halo-2-mobile.svg);
+  width: 56.2rem;
+  height: 56.2rem;
+  top: 28.2rem;
+  right: -35.6rem;
+}
+
+.contact-a-propos::after {
+  background-image: url(../img/halo-1-mobile.svg);
+  width: 52.4rem;
+  height: 28rem;
+  top: -7.7rem;
+  left: -30.2rem;
 }
 
 @media screen and (min-width: 64em) {
@@ -855,7 +988,7 @@ footer a {
 
   /* Marges communes */
 
-  .carrousel, .a-propos, .skills, .contact  {
+  .carrousel, .a-propos, .skills, .contact, .formation {
     padding-block: 8rem;
   }
 
@@ -866,7 +999,10 @@ footer a {
   .a-propos,
   .skills,
   .contact,
-  .mentionslegales {
+  .mentionslegales,
+  .hero-portrait,
+  .formation,
+  .contact-a-propos {
     padding-inline: max(12rem, calc((100% - 120rem) / 2));
   }
 
@@ -908,7 +1044,7 @@ footer a {
     display: block;
   }
 
-header::before {
+.halo-header::before {
     content: "";
     position: absolute;
     background-repeat: no-repeat;
@@ -949,6 +1085,7 @@ header::before {
     padding-block: 12rem;
     gap: 3.2rem;
   }
+
 
 .hero-text {
     max-width: 76rem;
@@ -1036,6 +1173,7 @@ header::before {
     row-gap: 4.8rem;
   }
 
+
   .skills h2 {
     grid-column-start: 1;
     grid-column-end: 4;
@@ -1052,6 +1190,8 @@ header::before {
     flex-direction: column;
     gap: 1.2rem;
   }
+
+  
 
   /* Accueil — Contact */
 
@@ -1090,4 +1230,81 @@ header::before {
     width: fit-content;
     margin-left: auto;
   }
+
+  .skills .parcours {
+    display: grid;
+    grid-auto-rows: 1fr;
+    gap: 1.6rem;
+    grid-column: 1 / -1;
+  }
+
+  .parcours.loisirs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .skills .parcours .cards {
+  justify-content: center;
+  max-width: 86rem;
+  gap: 0.8rem;
+  padding-inline: 3.2rem;
+  }
+
+  .formation {
+   align-items: flex-start;
+   width: 100%;
+  }
+
+  .hero-portrait {
+    align-items: flex-start;
+    padding-block: 12rem;
+    text-align: left;
+  }
+
+  /* Au-delà de 1 440 px, la marge supplémentaire garde les halos
+     près des bords de la maquette plutôt qu’aux bords de la fenêtre. */
+  .hero-portrait::after {
+    background-image: url(../img/Halo-2-test.svg);
+    width: 86.5rem;
+    height: 86.5rem;
+    top: -3.2rem;
+    right: calc(max(0px, (100% - 1440px) / 2) - 48.3rem);
+  }
+
+  .contact-a-propos::after {
+    width: 74.8rem;
+    height: 40rem;
+    top: -21.8rem;
+    left: calc(max(0px, (100% - 1440px) / 2) - 44.4rem);
+  }
+
+  .intro-portrait {
+    flex-direction: row;
+  }
+
+  .photo-portrait {
+    flex-shrink: 0;
+    width: 30%;
+    max-width: 36rem;
+  }
+
+  .intro-portrait-texte {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .intro-portrait-texte h2 {
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+  }
+
+  .intro-portrait-texte p + p {
+    max-width: 58.7rem;
+  }
+
+  .intro-portrait-texte .cv-portrait {
+    align-self: flex-start;
+    width: fit-content;
+    padding: 1.7rem 2.5rem;
+  }
+
 }
