@@ -1,13 +1,11 @@
 /* RESET CSS */
 
-/* Box sizing rules */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Je compte le padding et la bordure dans la taille de la boîte */
 }
 
-/* Remove default margin */
 body,
 h1,
 h2,
@@ -18,107 +16,94 @@ figure,
 blockquote,
 dl,
 dd {
-  margin: 0;
+  margin: 0; /* Je retire les marges par défaut de ces balises */
 }
 
 button {
   border: none;
 }
 
-/* Remove list styles, margin and padding on ul, ol elements with a class, which suggests default styling will be removed */
 ul[class],
 ol[class] {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  margin: 0; /* Je retire les marges par défaut des listes qui ont une classe */
+  padding: 0; /* Je retire aussi leur retrait à gauche */
+  list-style: none; /* Je retire leurs puces ou leurs numéros */
 }
 
 a {
   text-decoration: none;
 }
 
-/* Set core root defaults */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Je fais défiler la page en douceur quand on clique sur une ancre */
 }
 
-/* Set core body defaults */
 body {
-  min-height: 100vh;
+  min-height: 100vh; /* Je donne à la page au moins la hauteur de la fenêtre */
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  line-height: 1.5; /* Je règle la hauteur de ligne par défaut */
 }
 
-/* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto; /* Je laisse le navigateur couper le soulignement au niveau des lettres */
 }
 
-/* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
-  display: block;
+  max-width: 100%; /* J’empêche les images de dépasser de leur conteneur */
+  display: block; /* J’affiche les images en bloc pour éviter l’espace sous l’image */
 }
 
-/* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
 select {
-  font: inherit;
+  font: inherit; /* Je garde la police du parent dans les champs et les boutons */
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+   scroll-behavior: auto; /* Je retire le défilement doux si la personne réduit les animations */
   }
 
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important; /* Je raccourcis les animations si la personne le demande */
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important; /* Je raccourcis aussi les transitions */
     scroll-behavior: auto !important;
   }
 }
 
 html {
-    font-size: 62.5%; /* 1rem = 10px avec une base utilisateur de 16px */
+    font-size: 62.5%; /* Je règle 1rem à 10px si le navigateur est réglé à 16px */
 }
 
-/* Remove focus for mouse users */
 :focus:not(:focus-visible) {
-  outline: none;
+  outline: none; /* Je masque le contour quand le navigateur ne demande pas de focus visible */
 }
 
-/* Set core body defaults */
 body {
-  font-size: 1.6rem;
+  font-size: 1.6rem; /* Je fixe la taille de texte de base à 1.6rem */
 }
 
-/* Set text selection */
 ::selection {
-  color: #000;
-  background-color: #fd0;
+  color: #000; /* Je mets le texte sélectionné en noir */
+  background-color: #fd0; /* Je mets le fond de la sélection en jaune */
 }
 
-/* Set cursor pointer */
 label[for],
 button,
 input[type="submit"],
 select {
-  cursor: pointer;
+  cursor: pointer; /* J’affiche la main sur ces éléments cliquables */
 }
 
-/* Remove font style on address */
 address {
-  font-style: normal;
+  font-style: normal; /* Je retire l’italique par défaut des adresses */
 }
 
-/* Text meant only for screen readers. */
 .screen-reader-text {
   position: absolute;
   width: 1px;
@@ -126,7 +111,7 @@ address {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip: rect(0, 0, 0, 0); /* Je masque le texte à l’écran tout en le gardant accessible aux lecteurs d’écran */
   white-space: nowrap;
   border: 0;
 }
@@ -139,17 +124,15 @@ address {
   white-space: normal;
 }
 
-/* Print external URLs */
 @media print {
   a[href]:not([href^='#'])::after {
-    content: '('attr(href)')';
+    content: '('attr(href)')'; /* J’affiche l’adresse des liens qui ne pointent pas vers une ancre à l’impression */
   }
 }
 
 /* Couleurs et dégradés */
 
 :root {
-  /* color */
   --main-bg: #050507;
   --button-bg: #19151F;
   --main-text: #F5EFFA;
@@ -170,61 +153,54 @@ address {
 
 /* Polices */
 
-/* nunito-sans-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; /* J’affiche une police de secours pendant le chargement */
   font-family: 'Nunito Sans';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/nunito-sans-v19-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/nunito-sans-v19-latin-regular.woff2') format('woff2'); /* Je charge Nunito Sans en graisse 400 depuis le dossier fonts */
 }
-/* nunito-sans-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; /* J’affiche une police de secours pendant le chargement */
   font-family: 'Nunito Sans';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/nunito-sans-v19-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/nunito-sans-v19-latin-700.woff2') format('woff2'); /* Je charge Nunito Sans en graisse 700 depuis le dossier fonts */
 }
-/* nunito-sans-800 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; /* J’affiche une police de secours pendant le chargement */
   font-family: 'Nunito Sans';
   font-style: normal;
   font-weight: 800;
-  src: url('../fonts/nunito-sans-v19-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/nunito-sans-v19-latin-800.woff2') format('woff2'); /* Je charge Nunito Sans en graisse 800 depuis le dossier fonts */
 }
-/* poppins-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; /* J’affiche une police de secours pendant le chargement */
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/poppins-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/poppins-v24-latin-regular.woff2') format('woff2'); /* Je charge Poppins en graisse 400 depuis le dossier fonts */
 }
-/* poppins-500 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; /* J’affiche une police de secours pendant le chargement */
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
-  src: url('../fonts/poppins-v24-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/poppins-v24-latin-500.woff2') format('woff2'); /* Je charge Poppins en graisse 500 depuis le dossier fonts */
 }
-/* poppins-600 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; /* J’affiche une police de secours pendant le chargement */
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/poppins-v24-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/poppins-v24-latin-600.woff2') format('woff2'); /* Je charge Poppins en graisse 600 depuis le dossier fonts */
 }
-/* poppins-italic - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap; /* J’affiche une police de secours pendant le chargement */
   font-family: 'Poppins';
   font-style: italic;
   font-weight: 400;
-  src: url('../fonts/poppins-v24-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('../fonts/poppins-v24-latin-italic.woff2') format('woff2'); /* Je charge Poppins en italique depuis le dossier fonts */
 }
 
 /* Typographie */
@@ -384,7 +360,7 @@ body {
  }
 
  header {
-  position: sticky; /* position fixe au défilement */
+  position: sticky; /* Je garde le header en haut pendant le défilement sur mobile */
   top: 0;
   z-index: 1;
   background-color: var(--main-bg);
@@ -457,7 +433,8 @@ body {
 .skills::before,
 .contact::before,
 .formation::before,
-.contact-a-propos::before {
+.contact-a-propos::before,
+.catalogue-projets::before {
   inset-inline: 0;
   inset-block-start: 0;
   position: absolute;
@@ -534,33 +511,27 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Je coupe la partie des cartes qui dépasse sur les côtés */
   gap: 2.4rem;
 }
 
-/* Les cartes partagent une case au centre. Le JS les déplace sur la roue
-   depuis ce point commun. La grille garde la hauteur de la carte la plus haute. */
 .projects.roue-active {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr); /* Je garde une seule colonne dont la hauteur suit la plus grande carte */
   gap: 0;
   perspective: 80rem;
   padding-block: 1.6rem;
 }
 
-/* Le cadre coupe les côtés sur mobile. Le fond évite de voir le texte
-   d'une carte à travers celle qui passe devant. */
 .roue-active .article-project {
-  grid-area: 1 / 1;
+  grid-area: 1 / 1; /* Je superpose les cartes dans la même case */
   justify-self: center;
-  background-color: var(--main-bg);
-  /* Les valeurs envoyées par le JS sont sans unité. Le CSS fixe la taille
-     de la roue et le recul des cartes pour chaque largeur d’écran. */
+  background-color: var(--main-bg); /* J’évite de voir le texte d’une carte à travers celle qui passe devant */
   transform: translate3d(
     calc(var(--position-roue, 0) * 105%),
     0,
     calc(var(--recul-roue, 0) * var(--profondeur-roue, 8rem))
-  ) rotateY(calc(var(--position-roue, 0) * 30deg));
+  ) rotateY(calc(var(--position-roue, 0) * 30deg)); /* Je transforme les valeurs du JS en déplacement, en recul et en rotation */
 }
 
 .projects h3 {
@@ -781,7 +752,7 @@ body {
 
 /* Mentions légales */
 
-ul.list-perso { /*  */
+ul.list-perso {
   list-style: disc;
   padding-inline: 3.2rem;
 }
@@ -933,15 +904,14 @@ footer a {
   text-align: center;
 }
 
-/* Halos de la page À propos, placés derrière le contenu. */
 .hero-portrait::after,
 .contact-a-propos::after {
   content: "";
   position: absolute;
   background-repeat: no-repeat;
   background-size: contain;
-  pointer-events: none;
-  z-index: -1;
+  pointer-events: none; /* Je laisse passer les clics à travers les halos */
+  z-index: -1; /* Je place les halos de la page À propos derrière le contenu */
 }
 
 .hero-portrait::after {
@@ -960,12 +930,74 @@ footer a {
   left: -30.2rem;
 }
 
+/* Page Mes projets */
+
+#menu a.active-page {
+  color: var(--purple);
+  text-decoration: underline;
+}
+
+.hero.catalogue-intro {
+  padding-block: 3.2rem;
+  gap: 3.2rem;
+}
+
+.hero.catalogue-intro::after {
+  display: none;
+}
+
+.catalogue-intro p {
+  text-align: left;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+}
+
+.catalogue-projets {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.4rem;
+}
+
+.catalogue-projets .cards {
+  gap: 1.6rem;
+  padding-block: 1.6rem;
+  max-width: none;
+  box-shadow: 0 0.4rem 1.2rem var(--outline);
+}
+
+.catalogue-projets .gap-column-mobile {
+  gap: 1.6rem;
+}
+
+.capture-projet {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 292 / 180;
+  overflow: hidden;
+  background-color: var(--main-bg);
+  border: 1px solid var(--outline);
+  border-radius: 0.8rem;
+}
+
+.capture-projet img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%; /* Je fais remplir toute la hauteur du cadre à l’image, même si le texte agrandit la carte */
+  object-fit: cover;
+  object-position: center top;
+}
+
+.catalogue-projets .lien-projet {
+  align-self: flex-start; /* Je garde le bouton à gauche dans la colonne de texte */
+}
+
 @media screen and (min-width: 64em) {
   /* Typographie */
 
-  /* Les classes du HTML reprennent les tailles de la maquette desktop. */
   .mobile-main-heading {
-    font-size: 5.6rem;
+    font-size: 5.6rem; /* Je reprends la taille du titre principal dans Figma sur desktop */
     line-height: normal;
   }
 
@@ -992,7 +1024,6 @@ footer a {
     padding-block: 8rem;
   }
 
-  /* Les marges latérales grandissent pour centrer le contenu sur 120 rem. */
   header,
   .hero,
   .carrousel,
@@ -1002,8 +1033,10 @@ footer a {
   .mentionslegales,
   .hero-portrait,
   .formation,
-  .contact-a-propos {
-    padding-inline: max(12rem, calc((100% - 120rem) / 2));
+  .contact-a-propos,
+  .catalogue-projets,
+  footer {
+    padding-inline: max(12rem, calc((100% - 120rem) / 2)); /* Je garde au moins 12rem de chaque côté et je centre le contenu sur 120rem maximum */
   }
 
   /* Header et navigation */
@@ -1098,19 +1131,15 @@ footer a {
 
   /* Accueil — Carrousel */
 
-  /* À 1 440 px, la carte centrale mesure 48 rem. Près de 768 px,
-     les cartes rétrécissent avec la piste pour rester visibles ensemble. */
   .carrousel .article-project {
-    width: min(40%, 48rem);
+    width: min(40%, 48rem); /* Je garde les trois cartes visibles, avec 48rem maximum pour la carte centrale */
     padding: clamp(0.8rem, 1.2vw, 1.6rem);
     background-color: var(--button-bg);
   }
 
-  /* Les cartes latérales reculent davantage et s’assombrissent
-     progressivement au fil de la rotation. */
   .carrousel .roue-active .article-project {
-    --profondeur-roue: 16rem;
-    filter: brightness(calc(1 + var(--recul-roue, 0) * 0.3));
+    --profondeur-roue: 16rem; /* Je fais reculer davantage les cartes latérales sur desktop */
+    filter: brightness(calc(1 + var(--recul-roue, 0) * 0.3)); /* J’assombris progressivement les cartes latérales quand elles s’éloignent */
   }
 
   .carrousel .article-project img {
@@ -1120,15 +1149,14 @@ footer a {
     object-position: center top;
   }
 
-  /* Les commandes et le lien reprennent les dimensions desktop. */
   .carrousel .command-left,
   .carrousel .command-right {
-    width: 4.4rem;
+    width: 4.4rem; /* J’agrandis les flèches du carrousel sur desktop */
     height: 4.4rem;
   }
 
   .carrousel .link-project a {
-    padding: 1.5rem 2.5rem;
+    padding: 1.5rem 2.5rem; /* Je reprends l’espacement du bouton de la maquette desktop */
     color: var(--main-text);
     background-color: var(--button-bg);
     border-radius: 0.8rem;
@@ -1155,12 +1183,7 @@ footer a {
     width: 86.5rem;
     height: 86.5rem;
     top: -23.6rem;
-    /* 100% est la largeur de la section .a-propos.
-       On retire les 1 440 px du cadre centré, puis on divise par deux
-       pour trouver la marge à droite. max(0px, ...) empêche cette marge
-       de devenir négative si la section est plus étroite que le cadre.
-       calc() soustrait ensuite 49.9rem pour décaler le halo vers la droite. */
-    right: calc(max(0px, (100% - 1440px) / 2) - 49.9rem);
+    right: calc(max(0px, (100% - 1440px) / 2) - 49.9rem); /* Je prends la moitié de la largeur en plus autour du cadre de 1 440px, avec un minimum de 0, puis je décale le halo de 49.9rem vers la droite */
     pointer-events: none;
   }
 
@@ -1168,7 +1191,7 @@ footer a {
 
   .skills {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 colonnes de tailles égales même si une colonne a plus de texte */
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* Je garde trois colonnes de même largeur, même si une carte contient plus de texte */
     align-items: stretch;
     row-gap: 4.8rem;
   }
@@ -1260,21 +1283,19 @@ footer a {
     text-align: left;
   }
 
-  /* Au-delà de 1 440 px, la marge supplémentaire garde les halos
-     près des bords de la maquette plutôt qu’aux bords de la fenêtre. */
   .hero-portrait::after {
     background-image: url(../img/Halo-2-test.svg);
     width: 86.5rem;
     height: 86.5rem;
     top: -3.2rem;
-    right: calc(max(0px, (100% - 1440px) / 2) - 48.3rem);
+    right: calc(max(0px, (100% - 1440px) / 2) - 48.3rem); /* Je cale le halo de droite sur le cadre de 1 440px quand l’écran s’élargit */
   }
 
   .contact-a-propos::after {
     width: 74.8rem;
     height: 40rem;
     top: -21.8rem;
-    left: calc(max(0px, (100% - 1440px) / 2) - 44.4rem);
+    left: calc(max(0px, (100% - 1440px) / 2) - 44.4rem); /* Je cale aussi le halo de gauche sur le cadre de 1 440px */
   }
 
   .intro-portrait {
@@ -1307,4 +1328,57 @@ footer a {
     padding: 1.7rem 2.5rem;
   }
 
+  /* Page Mes projets */
+  .hero.catalogue-intro {
+    padding-block: 12rem;
+  }
+
+  .catalogue-intro p {
+    font-size: 2.4rem;
+  }
+
+  .catalogue-projets {
+    padding-block: 8rem;
+  }
+
+  .catalogue-projets .cards {
+    flex-direction: row;
+    gap: 2.4rem;
+    position: relative;
+    z-index: 2; /* Je fais passer les cartes devant le halo du header, qui a un z-index de 1 */
+  }
+
+  .catalogue-projets .capture-projet {
+    width: 50%;
+    flex-shrink: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .catalogue-projets .gap-column-mobile {
+    flex: 1;
+    min-width: 0;
+    align-self: center;
+  }
+
+  /* Footer */
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-block: 3.2rem;
+    border-top: 1px solid var(--outline);
+    color: var(--secondary-text);
+  }
+
+  footer::before {
+    display: none;
+  }
+
+  .footer-div {
+    gap: 3.2rem;
+  }
+
+  footer a {
+    color: var(--secondary-text);
+    text-decoration: underline;
+  }
 }

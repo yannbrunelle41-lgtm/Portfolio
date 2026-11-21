@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Yann Brunelle - Portfolio</title>
-	<meta name="description" content="">
+	<title>Mes projets | Yann Brunelle</title>
+	<meta name="description" content="Découvrez les projets de développement web de Yann Brunelle.">
 	<!-- Mettre la description du contenu de la page dans l'attribut content -->
 
 	<!-- Mettre ci-dessous les informations pour Open Graph (concerne notamment Facebook) - Voir https://ogp.me/-->
@@ -27,7 +27,7 @@
 </head>
 
 <body>
-	<header class="interface-text">		
+	<header class="interface-text halo-header">
 		<a href="index.html">Yann Brunelle</a>
 
 		<button
@@ -41,7 +41,7 @@
 		<nav class="hidden-nav interface-text" role="navigation" aria-label="skip menu">
 			<ul id="menu" data-visible="false">
 				<li><a href="index.html">Accueil</a></li>
-				<li><a href="mes-projets.html">Projets</a></li>
+				<li><a class="active-page" href="mes-projets.html">Projets</a></li>
 				<li><a href="a-propos.html">À propos</a></li>
 				<li><a href="index.html#contact">Contact</a></li>
         	</ul>
@@ -49,7 +49,72 @@
 
 	</header>
 	<main>
-		
+		<section class="hero catalogue-intro">
+			<h1 class="mobile-main-heading">
+				Mes projets
+			</h1>
+			<p class="mobile-subheading">
+				Une sélection de mes réalisations, entre apprentissage et projets personnels
+			</p>
+		</section>
+		<section class="catalogue-projets padding-inline-mobile" aria-label="Liste des projets">
+			<article class="cards">
+				<div class="capture-projet">
+					<img src="img/projet-1.webp" alt="Aperçu de la page d’accueil Insure">
+				</div>
+				<div class="gap-column-mobile">
+					<h2 class="mobile-subheading">
+						Intégration de la page Insure
+					</h2>
+					<p class="mobile-body-text">
+						Intégration d’une maquette Figma en HTML, CSS et JavaScript. La page a été conçue pour mobile, puis adaptée au desktop.
+					</p>
+					<p class="mobile-body-text">
+						HTML · CSS · JavaScript
+					</p>
+					<a class="empty-button interface-text lien-projet" href="projet-1.html">Découvrir le projet <span aria-hidden="true">→</span></a>
+				</div>
+			</article>
+			<article class="cards">
+				<div class="capture-projet">
+					<img src="img/projet-1.webp" alt="">
+				</div>
+				<div class="gap-column-mobile">
+					<h2 class="mobile-subheading">
+						Projet 2
+					</h2>
+					<p class="mobile-body-text">
+						Présentation à venir.
+					</p>
+				</div>
+			</article>
+			<article class="cards">
+				<div class="capture-projet">
+					<img src="img/projet-1.webp" alt="">
+				</div>
+				<div class="gap-column-mobile">
+					<h2 class="mobile-subheading">
+						Projet 3
+					</h2>
+					<p class="mobile-body-text">
+						Présentation à venir.
+					</p>
+				</div>
+			</article>
+			<article class="cards">
+				<div class="capture-projet">
+					<img src="img/projet-1.webp" alt="">
+				</div>
+				<div class="gap-column-mobile">
+					<h2 class="mobile-subheading">
+						Projet 4
+					</h2>
+					<p class="mobile-body-text">
+						Présentation à venir.
+					</p>
+				</div>
+			</article>
+		</section>
 	</main>
 	<footer class="interface-text">
 		<p>
