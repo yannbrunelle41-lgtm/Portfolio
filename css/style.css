@@ -1036,7 +1036,9 @@ footer a {
   .contact-a-propos,
   .catalogue-projets,
   footer {
-    padding-inline: max(12rem, calc((100% - 120rem) / 2)); /* Je garde au moins 12rem de chaque côté et je centre le contenu sur 120rem maximum */
+    /* Je retire 120rem de la largeur disponible puis je partage le reste entre les deux côtés */
+    /* Je garde au moins 12rem de marge intérieure de chaque côté */
+    padding-inline: max(12rem, calc((100% - 120rem) / 2));
   }
 
   /* Header et navigation */
@@ -1085,6 +1087,8 @@ footer a {
     width: 277.2rem;
     height: 277.2rem;
     top: -138.6rem;
+    /* Je partage la largeur en plus du cadre de 1440px entre les deux côtés */
+    /* Je garde cette marge à zéro sous 1440px et je décale le halo de 138.6rem vers la droite */
     right: calc(max(0px, (100% - 1440px) / 2) - 138.6rem);
     pointer-events: none;
   }
@@ -1183,7 +1187,9 @@ footer a {
     width: 86.5rem;
     height: 86.5rem;
     top: -23.6rem;
-    right: calc(max(0px, (100% - 1440px) / 2) - 49.9rem); /* Je prends la moitié de la largeur en plus autour du cadre de 1 440px, avec un minimum de 0, puis je décale le halo de 49.9rem vers la droite */
+    /* Je prends la moitié de la largeur en plus autour du cadre de 1440px avec un minimum de zéro */
+    /* Je soustrais 49.9rem à right pour décaler le halo vers la droite depuis ce repère */
+    right: calc(max(0px, (100% - 1440px) / 2) - 49.9rem);
     pointer-events: none;
   }
 
@@ -1288,14 +1294,18 @@ footer a {
     width: 86.5rem;
     height: 86.5rem;
     top: -3.2rem;
-    right: calc(max(0px, (100% - 1440px) / 2) - 48.3rem); /* Je cale le halo de droite sur le cadre de 1 440px quand l’écran s’élargit */
+    /* Je prends la moitié de la largeur en plus autour du cadre de 1440px avec un minimum de zéro */
+    /* Je soustrais 48.3rem à right pour décaler le halo vers la droite depuis ce repère */
+    right: calc(max(0px, (100% - 1440px) / 2) - 48.3rem);
   }
 
   .contact-a-propos::after {
     width: 74.8rem;
     height: 40rem;
     top: -21.8rem;
-    left: calc(max(0px, (100% - 1440px) / 2) - 44.4rem); /* Je cale aussi le halo de gauche sur le cadre de 1 440px */
+    /* Je prends la moitié de la largeur en plus autour du cadre de 1440px avec un minimum de zéro */
+    /* Je soustrais 44.4rem à left pour décaler le halo vers la gauche depuis ce repère */
+    left: calc(max(0px, (100% - 1440px) / 2) - 44.4rem);
   }
 
   .intro-portrait {
@@ -1349,15 +1359,19 @@ footer a {
   }
 
   .catalogue-projets .capture-projet {
-    width: 50%;
-    flex-shrink: 0;
-    aspect-ratio: 16 / 9;
+    width: 50%; /* Je donne à la capture la moitié de la largeur de la carte */
+    flex-shrink: 0; /* Je conserve cette largeur même si le texte manque de place */
+    aspect-ratio: 16 / 9; /* Je garde un cadre au format 16 sur 9 */
   }
 
   .catalogue-projets .gap-column-mobile {
     flex: 1;
     min-width: 0;
     align-self: center;
+  }
+
+  .catalogue-projets > :nth-child(3) {
+    flex-direction: row-reverse;
   }
 
   /* Footer */
