@@ -1,4 +1,4 @@
-// Code JavaScript réalisé par Codex.
+
 
 const bouton = document.querySelector(".burger-menu");
 const menu = document.querySelector("#menu");
@@ -15,6 +15,8 @@ bouton.addEventListener("click", function () {
     bouton.setAttribute("aria-expanded", "false")
   }
 });
+
+// Code JavaScript réalisé par Codex.
 
 const piste = document.querySelector(".projects");
 if (piste) {
