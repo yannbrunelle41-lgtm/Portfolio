@@ -27,8 +27,8 @@
 </head>
 
 <body>
-	<header class="interface-text halo-header">		
-		<a href="index.html">Yann Brunelle</a>
+	<header class="mobile-subheading halo-header">		
+		<a class="lien-header" href="index.html">Yann Brunelle</a>
 
 		<button
         class="burger-menu"
@@ -41,9 +41,9 @@
 		<nav class="hidden-nav interface-text" role="navigation" aria-label="skip menu">
 			<ul id="menu" data-visible="false">
 				<li><a class="active-page" href="index.html">Accueil</a></li>
-				<li><a href="mes-projets.html">Projets</a></li>
-				<li><a href="a-propos.html">À propos</a></li>
-				<li><a href="index.html#contact">Contact</a></li>
+				<li><a class="lien-header" href="mes-projets.html">Projets</a></li>
+				<li><a class="lien-header" href="a-propos.html">À propos</a></li>
+				<li><a class="lien-header" href="index.html#contact">Contact</a></li>
         	</ul>
 		</nav>
 
@@ -71,7 +71,7 @@
 				Mes projets
 			</h2>
 			<div class="projects">
-				<article class="article-project projet-1 central">		
+				<a href="projet-1.html" class="article-project projet-1 central">		<!-- J'ai remplacé toute la section article par une balise <a> pour toute la card soit cliquable. J'ai vérifié la sémantique sur MDN et c'est ok -->
 					<img src="img/projet-1.webp" alt="Aperçu de la page d’accueil Insure">
 					<h3 class="mobile-small-subheading">
 						Intégration de la page Insure
@@ -82,7 +82,7 @@
 					<p class="mobile-small-body-text">
 						HTML · CSS · JavaScript
 					</p>
-				</article>
+				</a>
 				<article class="article-project projet-2 a-droite">
 					<img src="img/projet-1.webp" alt="">
 					<h3 class="mobile-small-subheading">
@@ -127,7 +127,7 @@
 				</button>
 			</div>
 			<div class="link-project">
-				<a class="interface-text" href="mes-projets.html">Voir tous mes projets</a>
+				<a class="empty-button interface-text" href="mes-projets.html">Voir tous mes projets</a>
 			</div>
 		</section>
 		<section class="a-propos">
@@ -247,8 +247,8 @@
 			© 2026 Yann Brunelle
 		</p>
 		<div class="footer-div">
-			<a target="_blank" href="https://github.com/yannbrunelle41-lgtm">GitHub</a>
-			<a href="mentions-legales.html">Mentions légales</a>
+			<a class="lien-footer" target="_blank" href="https://github.com/yannbrunelle41-lgtm">GitHub</a>
+			<a class="lien-footer" href="mentions-legales.html">Mentions légales</a>
 		</div>
 	</footer>
 	<script src="js/nav.js"></script>

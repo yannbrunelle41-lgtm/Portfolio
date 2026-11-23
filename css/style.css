@@ -315,6 +315,7 @@ body {
 
 /* Header et navigation */
 
+
 #menu {
   background-color: var(--main-bg);
   list-style: none;
@@ -344,10 +345,6 @@ body {
  #menu[data-visible="true"] {
   transform: translateX(0);
   transition: 350ms;
- }
-
- #menu a {
-  color: var(--main-text);
  }
 
  .hidden-nav {
@@ -575,10 +572,6 @@ body {
 
 .commands p {
   color: var(--main-text);
-}
-
-.carrousel a {
-  color: var(--purple);
 }
 
 .link-project {
@@ -832,11 +825,6 @@ footer a {
 
 .intro-portrait-texte .cv-portrait {
   align-self: center;
-  width: 20rem;
-  max-width: 100%;
-  padding-block: 0.9rem;
-  text-align: center;
-  box-shadow: inset 0 0 0 1px var(--outline), 0 0.2rem 1rem var(--outline);
 }
 
 .parcours{
@@ -1159,14 +1147,6 @@ footer a {
     height: 4.4rem;
   }
 
-  .carrousel .link-project a {
-    padding: 1.5rem 2.5rem; /* Je reprends l’espacement du bouton de la maquette desktop */
-    color: var(--main-text);
-    background-color: var(--button-bg);
-    border-radius: 0.8rem;
-    box-shadow: inset 0 0 0 1px var(--purple), 0 0.2rem 1rem var(--outline);
-  }
-
   /* Accueil — À propos */
 
   .a-propos {
@@ -1334,8 +1314,6 @@ footer a {
 
   .intro-portrait-texte .cv-portrait {
     align-self: flex-start;
-    width: fit-content;
-    padding: 1.7rem 2.5rem;
   }
 
   /* Page Mes projets */
@@ -1395,4 +1373,38 @@ footer a {
     color: var(--secondary-text);
     text-decoration: underline;
   }
+
+}
+
+/* Survol */
+
+.lien-header:hover {
+  color: var(--main-bg);
+  background-color: var(--purple);
+  box-shadow: 0 0 0 0.3rem var(--purple);
+  border-radius: 0.2rem;
+}
+
+.lien-footer:hover {
+  color: var(--purple);
+  text-decoration: underline;
+}
+
+.full-button:hover {
+  color: var(--button-bg);
+  background-image: none;
+  background-color: var(--purple);
+}
+
+.empty-button:hover,
+.command-left:hover,
+.command-right:hover {
+  background-color: var(--main-bg);
+  box-shadow: inset 0 0 0 2px var(--purple);
+  cursor: pointer;
+}
+
+.central:hover {
+  scale: 1.045;
+  cursor: pointer;
 }
