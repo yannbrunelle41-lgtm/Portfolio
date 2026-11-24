@@ -981,6 +981,24 @@ footer a {
   align-self: flex-start; /* Je garde le bouton à gauche dans la colonne de texte */
 }
 
+.skills .parcours > :nth-child(4) {
+  position: relative;
+}
+
+.skills .parcours > :nth-child(4)::before {
+  content: "";
+  position: absolute;
+  background-image: url(../img/parcours-now.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 8rem;
+  height: 2rem;
+  max-width: 10rem;
+  max-height: 2.8rem;
+  top: 0.8rem;
+  right: 0.8rem;
+}
+
 @media screen and (min-width: 64em) {
   /* Typographie */
 
@@ -1241,6 +1259,7 @@ footer a {
   }
 
   .skills .parcours {
+    position: relative;
     display: grid;
     grid-auto-rows: 1fr;
     gap: 1.6rem;
@@ -1372,6 +1391,11 @@ footer a {
   footer a {
     color: var(--secondary-text);
     text-decoration: underline;
+  }
+
+  .skills .parcours > :nth-child(4)::before {
+    width: 10.1rem;
+    height: 2.8rem;
   }
 
 }
