@@ -999,6 +999,13 @@ footer a {
   right: 0.8rem;
 }
 
+.presentation {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  align-items: center;
+}
+
 @media screen and (min-width: 64em) {
   /* Typographie */
 
@@ -1235,6 +1242,7 @@ footer a {
     flex-direction: column;
     min-width: 0;
   }
+
 
   .identity {
     display: flex;
